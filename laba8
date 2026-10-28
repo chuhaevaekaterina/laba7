@@ -1,0 +1,16 @@
+n = int(input("Введите количество досок N: "))
+boards = list(map(float, input("Введите длины досок через пробел: ").split()))
+d = float(input("Введите допустимую разницу D: "))
+boards.sort()
+max_count = 0
+min_height = 0.0
+left = 0
+for right in range(n):
+    while boards[right] - boards[left] > d:
+        left += 1
+    current_count = right - left + 1
+    if current_count > max_count:
+        max_count = current_count
+    min_height = boards[left]
+print(f"Максимально возможное количество досок: {max_count}")
+print(f"Минимальная высота забора: {min_height}")
