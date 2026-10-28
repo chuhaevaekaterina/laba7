@@ -1,0 +1,19 @@
+matrix = [
+    [1, 9, 2],
+    [8, 5, 8],
+    [3, 1, 4]
+]
+
+n = len(matrix)      
+m = len(matrix[0])
+directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+for i in range(n):
+    for j in range(m):
+        neighbors_sum = 0
+for di, dj in directions:
+            ni = i + di 
+            nj = j + dj
+  if 0 <= ni < n and 0 <= nj < m:
+                neighbors_sum += matrix[ni][nj]
+ if matrix[i][j] > neighbors_sum:
+            print(f"Индекс: [{i}][{j}], Значение: {matrix[i][j]}") 
